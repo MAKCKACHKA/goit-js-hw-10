@@ -39,11 +39,11 @@ function createCatInfo(data) {
 }
 
 fetchBreeds().then(createOptions).then(newSelect).catch(fetchError);
-select.addEventListener('change', e => {
+select.addEventListener('change', event => {
   showLoader();
   catInfo.classList.add('visually-hidden');
-  fetchCatByBreed(e.target.value).then(createCatInfo).catch(fetchError);
-  console.log(e.target.value);
+  fetchCatByBreed(event.target.value).then(createCatInfo).catch(fetchError);
+  console.log(event.target.value);
 });
 
 function fetchError() {
